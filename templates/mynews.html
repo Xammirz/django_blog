@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="zxx">
+
+
+		<!-- Blog section -->
+	<section class="blog-section spad">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8">
+					{% for author_new in author_news %}
+					
+					
+					<div class="blog-post review-post">
+						<img src="{{author_new.image.url}}" alt="">
+						<div class="post-date">{{author_new.created}}</div>
+						<h3>{{author_new.title}}</h3>
+						<div class="post-metas">
+							<div class="post-meta"><a href="{% url 'update_post' author_new.id %}">redact|</a</div>
+							<div class="post-meta"><a href="{% url 'delete_post' author_new.id %}">delete</a></div>
+							<div class="post-meta">3 Comments</div>
+						</div>
+						<p>{{author_new.description}}</p>
+						
+					</div>
+					{% endfor %}
+					
+				</div>
+				
+			</div>
+		</div>
+	</section>
+	<!-- Blog section end -->
+
+	</body>
+</html>
+{% endblock %}

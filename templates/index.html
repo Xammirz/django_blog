@@ -1,0 +1,134 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+	<!-- Hero section -->
+	<section class="hero-section">
+		<div class="hero-slider owl-carousel">
+			<div class="hero-item set-bg" data-setbg="img/slider/1.jpg">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 offset-lg-1">
+							<h2>Enter the Battle</h2>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. </p>
+							<a href="#" class="site-btn">Read More</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="hero-item set-bg" data-setbg="img/slider/2.jpg">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-10 offset-lg-1">
+							<h2>Enter the Battle</h2>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. </p>
+							<a href="#" class="site-btn">Read More</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Hero section end -->
+
+	<!-- Blog section -->
+	<section class="blog-section spad">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8">
+					<div class="blog-post featured-post">
+						<img src="{% static 'img/python2.jpeg' %}" alt="">
+						<h3>Новостной Блог!</h3>
+						<div class="post-metas">
+							<div class="post-meta">By Admin</div>
+							
+						</div>
+					
+					</div>
+					<div class="row">
+						{% for post in page_obj %}
+						<div class="col-md-6">
+							<div class="blog-post">
+								{% if post.image %}
+								<img src="{{ post.image.url }}" alt="dddd">
+								{% endif %}
+								<div class="post-date">{{ post.created }}</div>
+								<h4>{{post.title}}</h4>
+								<div class="post-metas">
+									<div class="post-meta">By {{post.author}}</div>
+									<div class="post-meta">in <a href="{% url 'post_category' post.category.url %}">{{post.category}}</a></div>
+								</div>
+								<p>{{ post.small_description }}</p>
+								<a href="{% url 'new_detail' post.pk %}" class="read-more">Read More</a>
+							</div>
+						</div>
+						{% endfor %}
+					</div>
+					<div class="site-pagination">
+						{% if page_obj.has_previous %}
+						<a href="?page={{ page_obj.previous_page_number }}">previous</a>
+						<a href="?page=1">first |</a> 
+						{% endif %}
+						<p>
+							Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+						</p>
+						{% if page_obj.has_next %}
+						<a href="?page={{ page_obj.next_page_number }}">next|</a>
+						<a href="?page={{ page_obj.paginator.num_pages }}">last </a>
+						{% endif %}
+					</div>
+				</div>
+				<div class="col-lg-4 sidebar">
+					<div class="sb-widget">
+						<form class="sb-search">
+							<input type="text" placeholder="Search">
+						</form>
+					</div>
+					<div class="sb-widget">
+						<h2 class="sb-title">Categories</h2>
+						{% for category in categorys %}
+						<ul class="sb-cata-list">
+							<li><a href="{% url 'post_category' category.url %}">{{ category.name }}</a></li>
+						</ul>
+						{% endfor %}
+					</div>
+					<div class="sb-widget">
+						<h2 class="sb-title">Latest News</h2>
+						<div class="latest-news-widget">
+							{% for last_new in latest_news %}
+							<div class="ln-item">
+								<img src="{{ last_new.image.url }}" alt="">
+								<div class="ln-text">
+									<div class="ln-date">{{last_new.created}}</div>
+									<h6><a href="{% url 'new_detail' last_new.pk %}">{{last_new.title}}</a></h6>
+									<div class="ln-metas">
+										<div class="ln-meta">By {{last_new.author}}</div>
+										<div class="ln-meta">in <a href="{% url 'post_category' last_new.category.url %}">{{last_new.category}}</a></div>
+										
+									</div>
+								</div>
+							</div>
+							{% endfor %}
+						</div>
+					</div>
+					<div class="sb-widget">
+						<a href="#" class="add">
+							<img src="img/add-2.jpg" alt="">
+						</a>
+					</div>
+				
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Blog section end -->
+
+	
+
+
+							
+	<!--====== Javascripts & Jquery ======-->
+
+	</body>
+</html>
+{% endblock %}

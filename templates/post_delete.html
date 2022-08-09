@@ -1,0 +1,13 @@
+
+{% block content %}
+
+<h1>Удаление Поста</h1>
+
+<p>Вы уверены что хотите удалить: {{ post.title }}?</p>
+
+<form action="" method="POST">
+  {% csrf_token %}
+  <input type="submit" value="Да, удалить.">
+</form>
+
+{% endblock %}

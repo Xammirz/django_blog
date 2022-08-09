@@ -1,0 +1,30 @@
+{% load static %}
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Nice dark sign in form</title>
+  
+  
+  
+      <link rel="stylesheet" href="{% static 'css/style_log.css' %}">
+
+  
+</head>
+
+<body>
+  <h1>Sign Up Form</h1>
+<div id="wrapper">
+	<form id="signin" method="post" action="" autocomplete="off">
+		{% csrf_token %}
+		{{ form.as_p }}
+		<button type="submit">&#xf0da;</button>
+		<p>registered? <a href="{% url 'login' %}">click here</a></p>
+	</form>
+</div>
+  
+  
+</body>
+</html>
+
