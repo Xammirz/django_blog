@@ -10,4 +10,5 @@ urlpatterns = [
     path('post/create', views.CreatePost.as_view(), name='new_post'),
     path('post/update/<int:pk>', views.UpdatePost.as_view(), name='update_post'),
     path('post/delete/<int:pk>', views.DeletePost.as_view(), name='delete_post'),
+    path('api/v1/books/', views.NewsViewAPI.as_view(), name='book_list_api'),
 ]
