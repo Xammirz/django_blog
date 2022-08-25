@@ -1,15 +1,4 @@
 
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
-
-
-
-<!-- PROJECT LOGO -->
-<br />
 <div align="center">
 
 
@@ -26,34 +15,29 @@
 
 <!-- TABLE OF CONTENTS -->
 <details>
-  <summary>Table of Contents</summary>
+  <summary>Навигация</summary>
   <ol>
     <li>
-      <a href="#about-the-project">About The Project</a>
+      <a href="#немного-о-проекте">Немного о проекте</a>
       <ul>
-        <li><a href="#built-with">Built With</a></li>
+        <li><a href="#стек-проекта">Стек проекта</a></li>
       </ul>
     </li>
     <li>
-      <a href="#getting-started">Getting Started</a>
+      <a href="#приступая-к-работе">Приступая к работе</a>
       <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
+        <li><a href="#инструкция">Инструкция</a></li>
+        <li><a href="#docker">Docker</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
+
   </ol>
 </details>
 
 
 
 <!-- ABOUT THE PROJECT -->
-## About The Project
+## Немного о проекте
 
 
 
@@ -67,23 +51,8 @@
 Конечно, этот проект будет дальше развиваться и я буду добавлять всяких новых плюшек сюда)
 
 
-
-
-
-### На чем сделано:
-
-Проект сделан на стеке:
-* Python
-* Django
-* PostgreSql
-* html
-* css
-* js
-
-
-
 <!-- GETTING STARTED -->
-## Getting Started
+## Приступая к работе
 
 This is an example of how you may give instructions on setting up your project locally.
 To get a local copy up and running follow these simple example steps.
@@ -102,7 +71,7 @@ _все команды выполнять в терминале_
 
 1. Склонируйте репозиторий
    ```sh
-   git clone [https://github.com/your_username_/Project-Name.git](https://github.com/Xammirz/django_blog)
+   git clone https://github.com/Xammirz/django_blog
    ```
 2. Выполните все миграции
    ```sh
