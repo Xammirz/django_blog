@@ -7,7 +7,7 @@
   <p align="center">
     Блог где вы можете поделиться о впечатлениях об игре!
     </br>
-      <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
+
   </p>
 </div>
 
@@ -88,7 +88,7 @@ _все команды выполнять в терминале_
    ```js
    python manage.py runserver
    ```
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 
 
 
